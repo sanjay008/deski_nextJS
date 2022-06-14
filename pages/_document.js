@@ -1,7 +1,6 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import { hydrate, render } from "react-dom"
-import CustomStyle from '../components/style'
-import CustomScript from '../components/script'
+
 
 
 
@@ -15,14 +14,14 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-		  <CustomStyle />
+		 
 		  
         </Head>
         <body>
-			<div className="main-page-wrapper">
+			<div>
 				<Main />
 			</div>
-          <CustomScript />
+         
         </body>
       </Html>
     );
