@@ -1,0 +1,39 @@
+import Document, { Html, Head, Main, NextScript } from "next/document";
+import { hydrate, render } from "react-dom"
+import CustomStyle from '../components/style'
+import CustomScript from '../components/script'
+
+
+
+class MyDocument extends Document {
+  static async getInitialProps(ctx) {
+    const initialProps = await Document.getInitialProps(ctx);
+    return { ...initialProps };
+  }
+
+  render() {
+    return (
+      <Html>
+        <Head>
+          <meta charSet="utf-8" />
+          <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta name="keywords" content="" />
+          <meta name="description" content="" />
+          <meta name="author" content="" />
+		  <CustomStyle />
+		  
+        </Head>
+        <body>
+			<div className="main-page-wrapper">
+				<Main />
+			</div>
+          <CustomScript />
+        </body>
+      </Html>
+    );
+  }
+}
+
+export default MyDocument;
