@@ -1,5 +1,4 @@
 import '../styles/globals.css'
-import '../public/assets/css/responsive.css'
 
 function MyApp({ Component, pageProps }) {
 	const getLayout = Component.getLayout || ((page) => page)
