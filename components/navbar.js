@@ -13,27 +13,41 @@ export default function Navbar() {
 						<div className="d-lg-flex justify-content-between align-items-center">
 							<ul className="navbar-nav">
 								<li className="nav-item position-static active">
-									<a className="nav-link" href="/" >Home</a>
+									<Link href="/">
+										<a className="nav-link">Home</a>
+									</Link>
 								</li>
 								<li className="nav-item">
-									<a className="nav-link" href="/about-us" >About Us</a>
+									<Link href="/about-us">
+										<a className="nav-link">About Us</a>
+									</Link>
 								</li>
 								<li className="nav-item mega-dropdown-md">
-									<a className="nav-link" href="/portfolio" >Our Portfolio</a>
+									<Link href="/portfolio">
+										<a className="nav-link">Our Portfolio</a>
+									</Link>
 								</li>
 								
 								<li className="nav-item">
-									<a className="nav-link" href="/service">Our Services</a>
+									<Link href="/service">
+										<a className="nav-link">Our Services</a>
+									</Link>
 								</li>
 								
 								<li className="nav-item">
-									<a className="nav-link" href="/solution(managment)" >Our Solutions</a>
+									<Link href="/solution(managment)">
+										<a className="nav-link">Our Solutions</a>
+									</Link>
 								</li>
 								<li className="nav-item">
-									<a className="nav-link" href="/contact_us" >Contact Us</a>
+									<Link href="/contact_us">
+										<a className="nav-link">Contact Us</a>
+									</Link>
 								</li>
 								<li className="nav-item">
-									<a className="nav-link" href="blog" >Blog</a>
+									<Link href="blog">
+										<a className="nav-link">Blog</a>
+									</Link>
 								</li>
 						   </ul>
 						</div>
