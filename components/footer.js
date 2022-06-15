@@ -38,45 +38,133 @@ export default function Footer() {
 							<div className="col-lg-2 col-md-3 col-sm-6 footer-list" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="50">
 								<h5 className="footer-title">Products</h5>
 								<ul>
-									<li><a href="#">Take the tour</a></li>
-									<li><a href="#">Live chat</a></li>
-									<li><a href="#">Self-service</a></li>
-									<li><a href="#">Social</a></li>
-									<li><a href="#">Mobile</a></li>
-									<li><a href="#">Collaboration</a></li>
-									<li><a href="#">deski Reviews</a></li>
+									<li>
+										<Link href="#">
+											<a>Take the tour</a>
+										</Link>
+									</li>
+									<li>
+										<Link href="#">
+											<a>Live chat</a>
+										</Link>
+									</li>
+									<li>
+										<Link href="#">
+											<a>Self-service</a>
+										</Link>
+									</li>
+									<li>
+										<Link href="#">
+											<a>Social</a>
+										</Link>
+									</li>
+									<li>
+										<Link href="#">
+											<a>Mobile</a>
+										</Link>
+									</li>
+									<li>
+										<Link href="#">
+											<a>Collaboration</a>
+										</Link>
+									</li>
+									<li>
+										<Link href="#">
+											<a>deski Reviews</a>
+										</Link>
+									</li>
 								</ul>
 							</div>
 							<div className="col-lg-2 col-md-3 col-sm-6 footer-list" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="100">
 								<h5 className="footer-title">Services</h5>
 								<ul>
-									<li><a href="#">Web Design</a></li>
-									<li><a href="#">Development</a></li>
-									<li><a href="#">Wordpress</a></li>
-									<li><a href="#">Online Marketing</a></li>
-									<li><a href="#">Content</a></li>
+									<li>
+										<Link href="#">
+											<a>Web Design</a>
+										</Link>
+									</li>
+									<li>
+										<Link href="#">
+											<a>Development</a>
+										</Link>
+									</li>
+									<li>
+										<Link href="#">
+											<a>Wordpress</a>
+										</Link>
+									</li>										
+									<li>
+										<Link href="#">
+											<a>Online Marketing</a>
+										</Link>
+									</li>
+									<li>
+										<Link href="#">
+											<a>Content</a>
+										</Link>
+									</li>
 								</ul>
 							</div> 
 							<div className="col-lg-2 col-md-3 col-sm-6 footer-list" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="150">
 								<h5 className="footer-title">About us</h5>
 								<ul>
-									<li><a href="#">About us</a></li>
-									<li><a href="#">Work Portfolio</a></li>
-									<li><a href="#">Team</a></li>
-									<li><a href="#">Plan & Pricing</a></li>
-									<li><a href="#">News</a></li>
+									<li>
+										<Link href="#">
+											<a>About us</a>
+										</Link>
+									</li>
+									<li>
+										<Link href="#">
+											<a>Work Portfolio</a>
+										</Link>
+									</li>
+									<li>
+										<Link href="#">
+											<a>Team</a>
+										</Link>
+									</li>
+									<li>
+										<Link href="#">
+											<a>Plan & Pricing</a>
+										</Link>
+									</li>
+									<li>
+										<Link href="#">
+											<a>News</a>
+										</Link>
+									</li>
 								</ul>
 							</div> 
 							<div className="col-lg-3 col-md-3 col-sm-6 address-list" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
 								<h5 className="footer-title">Address</h5>
 								<ul className="info">
-									<li><a href="#">companyinfo@mail.com</a></li>
-									<li><a href="#" className="mobile-num">+761 412 3224</a></li>
+									<li>
+										<Link href="#">
+											<a>companyinfo@mail.com</a>
+										</Link>
+									</li>
+									<li>
+										<Link href="#">
+											<a className="mobile-num">+761 412 3224</a>
+										</Link>
+									</li>
 								</ul>
 								<ul className="social-icon d-flex">
-									<li><a href="#"><i className="fa fa-facebook"></i></a></li>
-									<li><a href="#"><i className="fa fa-twitter"></i></a></li>
-									<li><a href="#"><i className="fa fa-linkedin"></i></a></li>
+									<li>
+										<Link href="#">
+											<a><i className="fa fa-facebook"></i></a>
+										</Link>
+									</li>
+									<li>
+										<Link href="#">
+											<a><i className="fa fa-twitter"></i></a>
+										</Link>
+									</li>
+									<li>
+										<Link href="#">
+											<a><i className="fa fa-linkedin"></i></a>
+										</Link>
+									</li>
 								</ul>
 							</div> 
 						</div> 
