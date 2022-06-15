@@ -1,37 +1,47 @@
-/* eslint-disable @next/next/no-img-element */
 import React from "react"
 import * as ReactDOM from "react-dom/client"
 import { StrictMode } from "react"
 import Main from '../components/main'
 import styles from '../styles/Home.module.css'
-import Image from 'next/image'
-import profilePic from '../public/images/assets/ils-01.1.png'
 
-const myLoader = ({ src }) => {
-	return `http://organickuku.com/${src}`
-}
-
-export default function Home({header_top_content, whatWeDo, founderNotes, features}) {
+export default function Home() {
 	return (
 		<>
 			<div className="hero-banner-two">
-			{header_top_content.map((headerTop, index) => {
-				return (
-				<div className="container" key={"header"+index}>
+				<div className="container">
 					<div className="row align-items-start justify-content-between">
 						<div className="col-lg-6 order-lg-last">
 							<div className="illustration-holder">
-								<Image src={ headerTop.side_img } loader={myLoader} alt="" className="illustration_01"  width="500px" height="700px" />
-								
+								<img src="images/assets/ils-01.png" alt="" className="illustration_01" />
+								<img src="images/assets/ils-01.1.png" alt="" className="shapes shape-one" />
+								<img src="images/assets/ils-01.2.png" alt="" className="shapes shape-two" />
+								<img src="images/assets/ils-01.3.png" alt="" className="shapes shape-three" />
 							</div>
 						</div>
-						<div className="col-xl-5 col-lg-6 order-lg-first"  dangerouslySetInnerHTML={{ __html: headerTop.content }}>
-							
+
+						<div className="col-xl-5 col-lg-6 order-lg-first">
+							<div className="hero-text-wrapper md-mt-50">
+								<h1>
+									<span>
+										Great ticketing
+										<img src="images/shape/line-shape-1.svg" alt="" className="cs-screen" />
+									</span>
+									system for your customer. 
+								</h1>
+								<p className="sub-text">For hassale free event, we are here to help you by creating online ticket.</p>
+								<form action="#">
+									<input type="email" placeholder="Enter your email" />
+									<button>Get Started</button>
+								</form>
+								<ul className="list-item d-flex mt-20">
+									<li>Live chat</li>
+									<li>Ticketing</li>
+									<li>14 days free trial</li>
+								</ul>
+							</div>
 						</div>
 					</div> 
 				</div>
-				)
-			})}
 
 				<div className="mt-65 md-mt-50 trusted-companies">
 					<div className="container">
@@ -40,16 +50,7 @@ export default function Home({header_top_content, whatWeDo, founderNotes, featur
 								<p>Over <span>13,000+ Client</span> all over the world.</p>
 							</div>
 							<div className="col-12">
-								<div className="companies-logo-slider">
-									<div className="item"><img src="images/logo/logo-1.png" alt="" /></div>
-									<div className="item"><img src="images/logo/logo-2.png" alt="" /></div>
-									<div className="item"><img src="images/logo/logo-3.png" alt="" /></div>
-									<div className="item"><img src="images/logo/logo-4.png" alt="" /></div>
-									<div className="item"><img src="images/logo/logo-5.png" alt="" /></div>
-									<div className="item"><img src="images/logo/logo-6.png" alt="" /></div>
-									<div className="item"><img src="images/logo/logo-7.png" alt="" /></div>
-									<div className="item"><img src="images/logo/logo-3.png" alt="" /></div>
-								</div>
+								
 							</div>
 						</div>
 					</div>
@@ -57,10 +58,7 @@ export default function Home({header_top_content, whatWeDo, founderNotes, featur
 				
 			</div> 
 			
-			{whatWeDo.map((whatWeDo_arr, index) => {
-				const todo_content = whatWeDo_arr['content'];
-				return (
-			<div className="fancy-feature-four mt-20" key={"whatWeDo"+index}>
+			<div className="fancy-feature-four mt-20">
 				<div className="bg-wrapper">
 					<img src="images/shape/18.svg" alt="" className="shapes shape-right" />
 					<img src="images/shape/19.svg" alt="" className="shapes shape-left" />
@@ -69,9 +67,8 @@ export default function Home({header_top_content, whatWeDo, founderNotes, featur
 							<div className="row">
 								<div className="col-xl-8 col-lg-9 col-md-10 m-auto">
 									<p>What we do</p>
-									<h2>
-										<span dangerouslySetInnerHTML={{ __html: whatWeDo_arr.title }}></span>
-										<img src="images/shape/line-shape-2.svg" className="m-auto" alt="" />
+									<h2>Use deski to drive growth at
+										<span>your business. <img src="images/shape/line-shape-2.svg" alt="" /></span>
 									</h2>
 								</div>
 							</div>
@@ -83,22 +80,22 @@ export default function Home({header_top_content, whatWeDo, founderNotes, featur
 								<div className="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-duration="1200">
 									<div className="block-style-five">
 										<div className="icon"><img src="images/icon/20.svg" alt="" /></div>
-										<h6 className="title"><span>title 1</span></h6>
+										<h6 className="title"><span>Smart popups</span></h6>
 										<p>Create customized popups and show the right message at the right time. lorem dummy.</p>
 									</div> 
 								</div>
-								<div className="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-duration="1200">
+								<div className="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="100">
 									<div className="block-style-five">
-										<div className="icon"><img src="images/icon/20.svg" alt="" /></div>
-										<h6 className="title"><span>title 1</span></h6>
-										<p>Create customized popups and show the right message at the right time. lorem dummy.</p>
+										<div className="icon"><img src="images/icon/21.svg" alt="" /></div>
+										<h6 className="title"><span>Embeded Forms</span></h6>
+										<p>Collect website leads with embedded forms and integrate easily.</p>
 									</div> 
 								</div>
-								<div className="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-duration="1200">
+								<div className="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
 									<div className="block-style-five">
-										<div className="icon"><img src="images/icon/20.svg" alt="" /></div>
-										<h6 className="title"><span>title 1</span></h6>
-										<p>Create customized popups and show the right message at the right time. lorem dummy.</p>
+										<div className="icon"><img src="images/icon/22.svg" alt="" /></div>
+										<h6 className="title"><span>Autoresponder</span></h6>
+										<p>Send welcome email to your new subscribers  with a code.</p>
 									</div> 
 								</div>
 							</div>
@@ -106,8 +103,7 @@ export default function Home({header_top_content, whatWeDo, founderNotes, featur
 					</div>
 				</div>
 			</div>
-				)
-			})}
+			
 			<div className="fancy-text-block-six mt-250 md-mt-130">
 				<div className="container">
 					<div className="row">
@@ -209,9 +205,7 @@ export default function Home({header_top_content, whatWeDo, founderNotes, featur
 				</div>
 			</div> 
 			<div className="fancy-text-block-seven mt-150 md-mt-100">
-			{founderNotes.map((founderNote, index) => {
-				return(
-				<div className="bg-wrapper" key={"founder"+index}>
+				<div className="bg-wrapper">
 					<img src="images/shape/29.svg" alt="" className="shapes shape-one" />
 					<img src="images/shape/30.svg" alt="" className="shapes shape-two" />
 					<img src="images/shape/31.svg" alt="" className="shapes shape-three" />
@@ -221,48 +215,55 @@ export default function Home({header_top_content, whatWeDo, founderNotes, featur
 						<div className="row">
 							<div className="col-lg-5 col-md-6 col-sm-10 m-auto" data-aos="fade-right" data-aos-duration="1200">
 								<div className="img-holder">
-									<img src={founderNote.side_img} alt="" />
+									<img src="images/media/img_19.png" alt="" />
 									<img src="images/shape/34.svg" alt="" className="shapes shape-six" />
 								</div>
 							</div>
 							<div className="col-xl-6 col-lg-7 ml-auto" data-aos="fade-left" data-aos-duration="1200">
 								<div className="quote-wrapper pt-60">
 									<img src="images/icon/26.svg" alt="" className="icon" />
-								</div>
-								<div className="quote-wrapper" dangerouslySetInnerHTML={{ __html: founderNote.content }}>
+									<blockquote className="font-rubik">
+										Deski combines excellent live chat, ticketing and automation that allow us to provide quality.
+									</blockquote>
+									<h6>Zubayer Hasan <span>CEO & Founder deksi</span></h6>
+									<a href="about-us(cs).html" className="theme-btn-two mt-45 md-mt-30">Learn More</a>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				)
-			})}
 			</div> 
-			<div className="fancy-text-block-eight pt-150 pb-200 md-pt-100 md-pb-150">
+				<div className="fancy-text-block-eight pt-150 pb-200 md-pt-100 md-pb-150">
 				<div className="container">
-				{features.map((feature, index)=> {
-					return(
-					<div key={"feature"+index}>
 					<div className="title-style-two text-center mb-150 md-mb-70">
 						<div className="row">
 							<div className="col-xl-8 col-lg-9 col-md-10 m-auto">
 								<p>Features</p>
-								<h2 dangerouslySetInnerHTML={{ __html: feature.title }}></h2>
-								<img src="images/shape/line-shape-2.svg" alt="" className="m-auto" />
+								<h2>Use deski to drive growth at
+									<span>your business. <img src="images/shape/line-shape-2.svg" alt="" /></span>
+								</h2>
 							</div>
 						</div>
 					</div>
+
 					<div className="block-style-six pb-150 md-pb-70">
 						<div className="row">
 							<div className="col-lg-5" data-aos="fade-right" data-aos-duration="1200">
-								<img src="images/icon/27.svg" alt="" className="icon pt-35" />
-								<div className="text-details md-pb-50" dangerouslySetInnerHTML={{ __html: feature.content }}>
+								<div className="text-details pt-35 md-pb-50">
+									<img src="images/icon/27.svg" alt="" className="icon" />
+									<h3 className="title font-gilroy-bold">Make communication Fast & efficient.</h3>
+									<p className="text-meta">Our chatbots and live chat capture more ipsum of your best leads and convert them while they’re hot dummy text.</p>
+									<div className="quote-wrapper">
+										<div className="quote-icon d-flex align-items-center justify-content-center"><img src="images/icon/28.svg" alt="" /></div>
+										<blockquote>“Our team really feels great to use deski apps specially their quality”</blockquote>
+										<div className="name"><strong>Micle Duke,</strong> Product Manager <br />Uber Inc.</div>
+									</div> 
 								</div> 
 							</div>
 
 							<div className="col-lg-7 col-md-9 m-auto" data-aos="fade-left" data-aos-duration="1200">
 								<div className="illustration-holder illustration-one">
-									<img src={feature.side_img} alt="" className="ml-auto" />
+									<img src="images/assets/feature-img-09.png" alt="" className="ml-auto" />
 									<div className="shapes shape-one"></div>
 									<div className="shapes shape-two"></div>
 									<div className="shapes shape-three"></div>
@@ -274,9 +275,6 @@ export default function Home({header_top_content, whatWeDo, founderNotes, featur
 							</div>
 						</div>
 					</div>
-					</div>
-					)
-				})}
 
 					<div className="block-style-six pt-150 md-pt-40">
 						<div className="row">
@@ -401,32 +399,35 @@ export default function Home({header_top_content, whatWeDo, founderNotes, featur
 					</div> 
 				</div>
 			</div> 
-			
+			<div className="client-feedback-slider-one pt-50 pb-170 md-pb-80">
+				<div className="shapes-holder">
+					<img src="images/shape/39.svg" alt="" /  >
+					<img src="images/shape/42.svg" alt="" className="shapes shape-one" />
+					<img src="images/media/img_21.png" alt="" className="cp-img-one" />
+					<img src="images/media/img_22.png" alt="" className="cp-img-two" />
+					<img src="images/media/img_23.png" alt="" className="cp-img-three" />
+					<img src="images/media/img_24.png" alt="" className="cp-img-four" />
+					<div className="title-style-two">
+						<h2>What’s <br />Our Client Say <br />About Us.</h2>
+					</div>
+				</div>
+				<div className="container">
+					<div className="row">
+						<div className="col-lg-6 ml-auto">
+							
+						</div>
+					</div>
+				</div>
+			</div>
 		</>
 	)
 }
 
 Home.getLayout = function getLayout(page) {
-	return (
-		<Main>
-			{page}
-		</Main>
-	)
+  return (
+    <Main>
+      {page}
+    </Main>
+  )
 }
 
-export async function getServerSideProps() {
-	const header_top_content = await fetch('http://organickuku.com/public/api/getContent/home/1').then(res => res.json());
-	const whatWeDo = await fetch('http://organickuku.com/public/api/getContent/home/2').then(res => res.json());
-	const founderNotes = await fetch('http://organickuku.com/public/api/getContent/home/4').then(res => res.json());
-	const features = await fetch('http://organickuku.com/public/api/getContent/home/5').then(res => res.json());
-	
-	
-	return {
-		props: {
-			header_top_content,
-			whatWeDo,
-			founderNotes,
-			features
-		}
-	}
-}
