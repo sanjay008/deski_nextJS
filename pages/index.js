@@ -1,24 +1,28 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react"
 import * as ReactDOM from "react-dom/client"
 import { StrictMode } from "react"
 import Main from '../components/main'
 import styles from '../styles/Home.module.css'
 import Image from 'next/image'
+import profilePic from '../public/images/assets/ils-01.1.png'
+
+const myLoader = ({ src }) => {
+	return `http://127.0.0.1:8000/${src}`
+}
 
 export default function Home({header_top_content, whatWeDo, founderNotes, features}) {
 	return (
 		<>
 			<div className="hero-banner-two">
-			{header_top_content.map(headerTop => {
+			{header_top_content.map((headerTop, index) => {
 				return (
-				<div className="container">
+				<div className="container" key={"header"+index}>
 					<div className="row align-items-start justify-content-between">
 						<div className="col-lg-6 order-lg-last">
 							<div className="illustration-holder">
-								<Image src={ headerTop.side_img } alt="" className="illustration_01" width="200px" height="100px" />
-								<Image src="/../images/assets/ils-01.1.png" alt="" layout="fill" className="shapes shape-one" />
-								<Image src="/../images/assets/ils-01.2.png" alt="" layout="fill" className="shapes shape-two" />
-								<Image src="/../images/assets/ils-01.3.png" alt="" layout="fill" className="shapes shape-three" />
+								<Image src={ headerTop.side_img } loader={myLoader} alt="" className="illustration_01"  width="500px" height="700px" />
+								
 							</div>
 						</div>
 						<div className="col-xl-5 col-lg-6 order-lg-first"  dangerouslySetInnerHTML={{ __html: headerTop.content }}>
@@ -53,10 +57,10 @@ export default function Home({header_top_content, whatWeDo, founderNotes, featur
 				
 			</div> 
 			
-			{whatWeDo.map((whatWeDo_arr) => {
+			{whatWeDo.map((whatWeDo_arr, index) => {
 				const todo_content = whatWeDo_arr['content'];
 				return (
-			<div className="fancy-feature-four mt-20">
+			<div className="fancy-feature-four mt-20" key={"whatWeDo"+index}>
 				<div className="bg-wrapper">
 					<img src="images/shape/18.svg" alt="" className="shapes shape-right" />
 					<img src="images/shape/19.svg" alt="" className="shapes shape-left" />
@@ -205,9 +209,9 @@ export default function Home({header_top_content, whatWeDo, founderNotes, featur
 				</div>
 			</div> 
 			<div className="fancy-text-block-seven mt-150 md-mt-100">
-			{founderNotes.map(founderNote => {
+			{founderNotes.map((founderNote, index) => {
 				return(
-				<div className="bg-wrapper">
+				<div className="bg-wrapper" key={"founder"+index}>
 					<img src="images/shape/29.svg" alt="" className="shapes shape-one" />
 					<img src="images/shape/30.svg" alt="" className="shapes shape-two" />
 					<img src="images/shape/31.svg" alt="" className="shapes shape-three" />
@@ -236,9 +240,9 @@ export default function Home({header_top_content, whatWeDo, founderNotes, featur
 			</div> 
 			<div className="fancy-text-block-eight pt-150 pb-200 md-pt-100 md-pb-150">
 				<div className="container">
-				{features.map(feature => {
+				{features.map((feature, index)=> {
 					return(
-					<div>
+					<div key={"feature"+index}>
 					<div className="title-style-two text-center mb-150 md-mb-70">
 						<div className="row">
 							<div className="col-xl-8 col-lg-9 col-md-10 m-auto">
@@ -410,7 +414,7 @@ Home.getLayout = function getLayout(page) {
 	)
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
 	const header_top_content = await fetch('http://127.0.0.1:8000/api/getContent/home/1').then(res => res.json());
 	const whatWeDo = await fetch('http://127.0.0.1:8000/api/getContent/home/2').then(res => res.json());
 	const founderNotes = await fetch('http://127.0.0.1:8000/api/getContent/home/4').then(res => res.json());
