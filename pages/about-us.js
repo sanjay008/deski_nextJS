@@ -1,3 +1,6 @@
+import React from "react"
+import * as ReactDOM from "react-dom/client"
+import { StrictMode } from "react"
 import Head from 'next/head'
 import Image from 'next/image'
 import Main from '../components/main'
@@ -54,7 +57,8 @@ export default function Home({header_top_content, story_section, founder_section
 						<div className="row justify-content-center">
 							<div className="col-lg-4 col-6" data-aos="fade-up" data-aos-duration="1200">
 								<div className="counter-box-three">
-									<div className="icon"><img src="images/icon/31.svg" alt=""/></div>
+									<div className="icon">
+									<img src="images/icon/31.svg" alt=""/></div>
 									<h2 className="number"><span className="timer" data-from="0" data-to="13" data-speed="1500" data-refresh-interval="5">0</span>m</h2>
 							      	<p className="font-rubik">Ticket Sold</p>
 								</div> 

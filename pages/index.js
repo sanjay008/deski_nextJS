@@ -40,16 +40,7 @@ export default function Home({header_top_content, whatWeDo, founderNotes, featur
 								<p>Over <span>13,000+ Client</span> all over the world.</p>
 							</div>
 							<div className="col-12">
-								<div className="companies-logo-slider">
-									<div className="item"><img src="images/logo/logo-1.png" alt="" /></div>
-									<div className="item"><img src="images/logo/logo-2.png" alt="" /></div>
-									<div className="item"><img src="images/logo/logo-3.png" alt="" /></div>
-									<div className="item"><img src="images/logo/logo-4.png" alt="" /></div>
-									<div className="item"><img src="images/logo/logo-5.png" alt="" /></div>
-									<div className="item"><img src="images/logo/logo-6.png" alt="" /></div>
-									<div className="item"><img src="images/logo/logo-7.png" alt="" /></div>
-									<div className="item"><img src="images/logo/logo-3.png" alt="" /></div>
-								</div>
+								
 							</div>
 						</div>
 					</div>
