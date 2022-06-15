@@ -33,7 +33,7 @@ export default function Home({ header_content, categories, allPortfolios }) {
 				        <div className="mixitUp-container gutter-space-one d-flex flex-wrap">
 							{allPortfolios.map((portfolio,index) => {
 								return(
-									<div className="mix design" key = {index}>
+									<div className="mix design" key={index}>
 										<div className="portfolio-block-two position-relative">
 											<img src={portfolio.img} alt="" className="w-100 h-100 tran4s img-meta" />
 											<Link href={portfolio.img}>
