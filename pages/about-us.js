@@ -187,42 +187,42 @@ export default function Home({header_top_content, story_section, founder_section
 
 					<div className="row">
 						<div className="col-lg-4 col-sm-6" data-aos="fade-up" data-aos-duration="1200">
-							<div className="team-member" onclick="location.href='team-single.html';">
+							<div className="team-member" onClick="location.href='team-single.html';">
 								<img src="images/media/img_29.png" alt="" />
 								<div className="name">Jhon Du</div>
 								<div className="position">Senior Product Designer</div>
 							</div> 
 						</div>
 						<div className="col-lg-4 col-sm-6" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="100">
-							<div className="team-member" onclick="location.href='team-single.html';">
+							<div className="team-member" onClick="location.href='team-single.html';">
 								<img src="images/media/img_30.png" alt="" />
 								<div className="name">Juan Barber</div>
 								<div className="position">Co-Founder</div>
 							</div> 
 						</div>
 						<div className="col-lg-4 col-sm-6" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
-							<div className="team-member" onclick="location.href='team-single.html';">
+							<div className="team-member" onClick="location.href='team-single.html';">
 								<img src="images/media/img_31.png" alt="" />
 								<div className="name">Maud Ellis</div>
 								<div className="position">Customer management</div>
 							</div> 
 						</div>
 						<div className="col-lg-4 col-sm-6" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="50">
-							<div className="team-member" onclick="location.href='team-single.html';">
+							<div className="team-member" onClick="location.href='team-single.html';">
 								<img src="images/media/img_32.png" alt="" />
 								<div className="name">Maud Ellis</div>
 								<div className="position">Customer management</div>
 							</div> 
 						</div>
 						<div className="col-lg-4 col-sm-6" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="100">
-							<div className="team-member" onclick="location.href='team-single.html';">
+							<div className="team-member" onClick="location.href='team-single.html';">
 								<img src="images/media/img_33.png" alt="" />
 								<div className="name">Jhon Du</div>
 								<div className="position">Senior Product Designer</div>
 							</div> 
 						</div>
 						<div className="col-lg-4 col-sm-6" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
-							<div className="team-member" onclick="location.href='team-single.html';">
+							<div className="team-member" onClick="location.href='team-single.html';">
 								<img src="images/media/img_34.png" alt="" />
 								<div className="name">Juan Barber</div>
 								<div className="position">Co-Founder</div>
