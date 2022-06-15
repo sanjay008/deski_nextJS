@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react"
 import * as ReactDOM from "react-dom/client"
 import { StrictMode } from "react"
