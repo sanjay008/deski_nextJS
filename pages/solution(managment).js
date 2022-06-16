@@ -53,9 +53,9 @@ export default function SolutrionManagement({header_content, ourTeam, startUp}) 
 
 					<div className="wrapper">
 						<div className="row justify-content-center">
-						{temes.map(team => {
+						{temes.map((team, index)=> {
 							return(
-								<div className="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="1200">
+								<div className="col-lg-4 col-md-6" key={index} data-aos="fade-up" data-aos-duration="1200">
 									<div className="block-style-three">
 										<div className="icon"><img src="images/icon/09.svg" alt="" /></div>
 										<h4 dangerouslySetInnerHTML={{ __html: team.title}}></h4>
@@ -82,9 +82,9 @@ export default function SolutrionManagement({header_content, ourTeam, startUp}) 
 
 					<div className="wrapper">
 						<div className="row justify-content-center">
-						{startUpTopics.map(topic => {
+						{startUpTopics.map((topic, index)=> {
 							return(
-								<div className="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="1200">
+								<div className="col-lg-4 col-md-6" key={index} data-aos="fade-up" data-aos-duration="1200">
 									<div className="block-style-four">
 										<div className="icon"><img src="images/icon/12.svg" alt="" /></div>
 										<h4 dangerouslySetInnerHTML={{ __html: topic.title}}></h4>
