@@ -20,6 +20,7 @@ export default function Main({ children }) {
 					<Script src="../vendor/jquery.appear.js" strategy="afterInteractive" />
 					<Script src="../vendor/jquery.countTo.js" strategy="afterInteractive" />
 					<Script src="../vendor/slick/slick.min.js" strategy="afterInteractive" />
+					<Script src="../vendor/fancybox/dist/jquery.fancybox.min.js" strategy="afterInteractive" />
 					<Script src="../js/theme.js" strategy="afterInteractive" />
 					<Script src="../assets/js/custom.js" strategy="afterInteractive" />
 					<Footer />

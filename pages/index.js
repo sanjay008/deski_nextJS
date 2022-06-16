@@ -25,7 +25,7 @@ export default function Home({header_top_content, whatWeDo, founderNotes, featur
 								
 							</div>
 						</div>
-						<div className="col-xl-5 col-lg-6 order-lg-first"  dangerouslySetInnerHTML={{ __html: headerTop.content }}>
+						<div className="col-xl-5 col-lg-6 order-lg-first" dangerouslySetInnerHTML={{ __html: headerTop.content }}>
 							
 						</div>
 					</div> 
