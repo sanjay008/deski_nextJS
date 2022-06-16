@@ -21,7 +21,6 @@ export default function Main({ children }) {
 					<Script src="../vendor/jquery.countTo.js" strategy="afterInteractive" />
 					<Script src="../vendor/slick/slick.min.js" strategy="afterInteractive" />
 					<Script src="../js/theme.js" strategy="afterInteractive" />
-					<Script src="../assets/js/dataTables.min.js" strategy="afterInteractive" />
 					<Script src="../assets/js/custom.js" strategy="afterInteractive" />
 					<Footer />
 				</div>
