@@ -12,18 +12,17 @@ export default function Main({ children }) {
 					<Header />
 					{children}
 					
-					<Script src="https://code.jquery.com/jquery-3.6.0.min.js" />
-					<Script src="../vendor/jquery.min.js" />
-					<Script src="../vendor/popper.js/popper.min.js" />
-					<Script src="../vendor/bootstrap/js/bootstrap.min.js" />
-					<Script src="../vendor/mega-menu/assets/js/custom.js" />
-					<Script src="../vendor/aos-next/dist/aos.js" />
-					<Script src="../vendor/jquery.appear.js" />
-					<Script src="../vendor/jquery.countTo.js" />
-					<Script src="../vendor/slick/slick.min.js" />
-					<Script src="../js/theme.js" />
-					<Script src="../assets/js/dataTables.min.js" />
-					<Script src="../assets/js/custom.js" />
+					<Script src="../vendor/jquery.min.js" strategy="beforeInteractive" />
+					<Script src="../vendor/popper.js/popper.min.js" strategy="beforeInteractive" />
+					<Script src="../vendor/bootstrap/js/bootstrap.min.js" strategy="beforeInteractive" />
+					<Script src="../vendor/mega-menu/assets/js/custom.js" strategy="beforeInteractive" />
+					<Script src="../vendor/aos-next/dist/aos.js" strategy="beforeInteractive" />
+					<Script src="../vendor/jquery.appear.js" strategy="afterInteractive" />
+					<Script src="../vendor/jquery.countTo.js" strategy="afterInteractive" />
+					<Script src="../vendor/slick/slick.min.js" strategy="afterInteractive" />
+					<Script src="../js/theme.js" strategy="afterInteractive" />
+					<Script src="../assets/js/dataTables.min.js" strategy="afterInteractive" />
+					<Script src="../assets/js/custom.js" strategy="afterInteractive" />
 					<Footer />
 				</div>
 			</main>
