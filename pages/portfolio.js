@@ -23,9 +23,9 @@ export default function Home({ header_content, categories, allPortfolios }) {
 					<div className="top-border bottom-border pb-130 md-pb-90">
 						<div className="controls po-control-one text-center mb-90 md-mb-50 mt-90 md-mt-60">
 				            <button type="button" className="control" data-filter="all">All</button>
-							{categories.map(category_item => {
+							{categories.map((category_item, index) => {
 								return(
-									<button type="button" className="control" data-filter={category_item.slug}>{category_item.category}</button>
+									<button type="button" key={index} className="control" data-filter={category_item.slug}>{category_item.category}</button>
 								)
 							})}
 				        </div>
