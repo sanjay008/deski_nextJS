@@ -1,5 +1,12 @@
-import * as ReactDOM from "react-dom/client";
+/* eslint-disable @next/next/no-img-element */
+import React from "react"
+import * as ReactDOM from "react-dom/client"
+import { StrictMode } from "react"
+import { useRouter } from "next/router"
+import Image from 'next/image'
 import Link from 'next/link'
+import Main from '../components/main'
+import styles from '../styles/Home.module.css'
 
 export default function Footer() {
 	return (
