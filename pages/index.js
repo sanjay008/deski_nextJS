@@ -6,14 +6,51 @@ import Main from '../components/main'
 import styles from '../styles/Home.module.css'
 import Image from 'next/image'
 import profilePic from '../public/images/assets/ils-01.1.png'
+import Head from 'next/head';
+import Script from 'next/script'
+import {useEffect} from 'react'
+import router from "next/router"
+import Link from 'next/link'
+
+
+
+
 
 const myLoader = ({ src }) => {
 	return `http://organickuku.com/${src}`
 }
 
-export default function Home({header_top_content, whatWeDo, founderNotes, features}) {
+function withScript(Component, dir, ...srcs){
+    function componentWithScriptProp(props){
+			// eslint-disable-next-line react-hooks/rules-of-hooks
+			srcs.forEach(src => {
+				useEffect(() => {
+					
+					const script = document.createElement("script");
+					script.src = `/${dir}/${src}.js`;
+					console.log(script.src)
+					script.defer = true;
+					document.body.appendChild(script);
+					return () => { document.body.removeChild(script) };
+				});
+			});
+			return <Component {...props} />
+		}
+		componentWithScriptProp.getInitialProps = Component.getInitialProps;
+		componentWithScriptProp.origGetInitialProps = Component.origGetInitialProps;
+		if (process.env.NODE_ENV !== 'production') {
+			const name = Component.displayName || Component.name || 'Unknown';
+			componentWithScriptProp.displayName = `withScript(${name})`;
+		}
+		return componentWithScriptProp;
+	}
+
+const Home = ({header_top_content, whatWeDo, founderNotes, features, Slider}) => {
 	return (
 		<>
+			<Main>
+			<Head>
+			</Head>
 			<div className="hero-banner-two">
 			{header_top_content.map((headerTop, index) => {
 				return (
@@ -41,14 +78,13 @@ export default function Home({header_top_content, whatWeDo, founderNotes, featur
 							</div>
 							<div className="col-12">
 								<div className="companies-logo-slider">
-									<div className="item"><img src="images/logo/logo-1.png" alt="" /></div>
-									<div className="item"><img src="images/logo/logo-2.png" alt="" /></div>
-									<div className="item"><img src="images/logo/logo-3.png" alt="" /></div>
-									<div className="item"><img src="images/logo/logo-4.png" alt="" /></div>
-									<div className="item"><img src="images/logo/logo-5.png" alt="" /></div>
-									<div className="item"><img src="images/logo/logo-6.png" alt="" /></div>
-									<div className="item"><img src="images/logo/logo-7.png" alt="" /></div>
-									<div className="item"><img src="images/logo/logo-3.png" alt="" /></div>
+									
+									{Slider.map((slide, index) => {
+										return(
+											<div className="item" key={"slide_"+index}><img src={slide.slider_image} alt="" /></div>
+										)
+									})}
+									
 								</div>
 							</div>
 						</div>
@@ -401,7 +437,7 @@ export default function Home({header_top_content, whatWeDo, founderNotes, featur
 					</div> 
 				</div>
 			</div> 
-			
+			</Main>
 		</>
 	)
 }
@@ -413,12 +449,14 @@ Home.getLayout = function getLayout(page) {
 		</Main>
 	)
 }
+export default withScript(Home, "js", "jquery.min", "popper.min", "bootstrap.min", "custom", "jquery.appear", "jquery.countTo", "slick.min", "jquery.fancybox.min", "theme")
 
 export async function getServerSideProps() {
+	const Slider = await fetch('http://organickuku.com/public/api/getSlider_API').then(res => res.json());
 	const header_top_content = await fetch('http://organickuku.com/public/api/getContent/home/1').then(res => res.json());
 	const whatWeDo = await fetch('http://organickuku.com/public/api/getContent/home/2').then(res => res.json());
 	const founderNotes = await fetch('http://organickuku.com/public/api/getContent/home/4').then(res => res.json());
-	const features = await fetch('http://organickuku.com/public/api/getContent/home/5').then(res => res.json());
+	const features = await fetch('http://organickuku.com/public/getContent/home/5').then(res => res.json());
 	
 	
 	return {
@@ -426,7 +464,9 @@ export async function getServerSideProps() {
 			header_top_content,
 			whatWeDo,
 			founderNotes,
-			features
+			features,
+			Slider
 		}
 	}
+	revalidate: 10
 }

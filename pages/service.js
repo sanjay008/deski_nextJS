@@ -9,7 +9,7 @@ import Main from '../components/main'
 import styles from '../styles/Home.module.css'
 
 const myLoader = ({ src }) => {
-	return `http://organickuku.com/${src}`
+	return `http://127.0.0.1:8000/${src}`
 }
 
 export default function Services({ header_content, offer, serviceSection, services, whyUs }) {
@@ -169,11 +169,11 @@ Services.getLayout = function getLayout(page) {
 }
 
 export async function getStaticProps() {
-	const header_content = await fetch('http://organickuku.com/public/api/getContent/services/1').then(res => res.json());
-	const offer = await fetch('http://organickuku.com/public/api/getContent/services/2').then(res => res.json());
-	const serviceSection = await fetch('http://organickuku.com/public/api/getContent/services/3').then(res => res.json());
-	const whyUs = await fetch('http://organickuku.com/public/api/getContent/services/4').then(res => res.json());
-	const services = await fetch('http://organickuku.com/public/api/getAllServices').then(res => res.json());
+	const header_content = await fetch('http://127.0.0.1:8000/api/getContent/services/1').then(res => res.json());
+	const offer = await fetch('http://127.0.0.1:8000/api/getContent/services/2').then(res => res.json());
+	const serviceSection = await fetch('http://127.0.0.1:8000/api/getContent/services/3').then(res => res.json());
+	const whyUs = await fetch('http://127.0.0.1:8000/api/getContent/services/4').then(res => res.json());
+	const services = await fetch('http://127.0.0.1:8000/api/getAllServices').then(res => res.json());
 	
 	return {
 		props: {

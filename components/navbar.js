@@ -4,7 +4,6 @@ import { useRouter } from "next/router";
 
 export default function Navbar() {
 	const router = useRouter();
-	console.log(router);
 	return (
 		<>
 			<nav id="mega-menu-holder" className="navbar navbar-expand-lg">
