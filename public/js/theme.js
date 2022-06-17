@@ -7,15 +7,14 @@
 
 
 (function($) {
-    "use strict";
     
 // ----------------------------- Counter Function
-        var timer = $('.timer');
-        if(timer.length) {
-            timer.appear(function () {
-              timer.countTo();
-          });
-        }
+        // var timer = $('.timer');
+        // if(timer.length) {
+            // timer.appear(function () {
+              // timer.countTo();
+          // });
+        // }
 
 // ------------------------ Navigation Scroll
         $(window).on('scroll', function (){   
@@ -732,12 +731,12 @@
 
 
 // ------------------------------- AOS Animation
-        if ($("[data-aos]").length) { 
-            AOS.init({
-            duration: 1000,
-            mirror: true
-          });
-        }
+		// if ($("[data-aos]").length) { 
+            // AOS.init({
+            // duration: 1000,
+            // mirror: true
+          // });
+        // }
         
 // ------------------------------------- Fancybox
         var fancy = $ (".fancybox");
