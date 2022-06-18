@@ -41,7 +41,7 @@ function withScript(Component, dir, ...srcs){
 	return componentWithScriptProp;
 }
 
-export default function Contact() {
+const Contact = () => {
 	return (
 		<>
 		<Main>
