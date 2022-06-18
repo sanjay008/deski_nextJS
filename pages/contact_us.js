@@ -2,19 +2,49 @@
 import React from "react"
 import * as ReactDOM from "react-dom/client"
 import { StrictMode } from "react"
-import Link from 'next/link'
-import Head from 'next/head'
-import Image from 'next/image'
 import Main from '../components/main'
 import styles from '../styles/Home.module.css'
+import Image from 'next/image'
+import profilePic from '../public/images/assets/ils-01.1.png'
+import Head from 'next/head';
+import Script from 'next/script'
+import {useEffect} from 'react'
+import router from "next/router"
+import Link from 'next/link'
 
 const myLoader = ({ src }) => {
-	return `http://127.0.0.1:8000/${src}`
+	return `http://organickuku.com/${src}`
 }
 
-export default function Home() {
+function withScript(Component, dir, ...srcs){
+	function componentWithScriptProp(props){
+		// eslint-disable-next-line react-hooks/rules-of-hooks
+		srcs.forEach(src => {
+			useEffect(() => {
+				
+				const script = document.createElement("script");
+				script.src = `/${dir}/${src}.js`;
+				console.log(script.src)
+				script.defer = true;
+				document.body.appendChild(script);
+				return () => { document.body.removeChild(script) };
+			});
+		});
+		return <Component {...props} />
+	}
+	componentWithScriptProp.getInitialProps = Component.getInitialProps;
+	componentWithScriptProp.origGetInitialProps = Component.origGetInitialProps;
+	if (process.env.NODE_ENV !== 'production') {
+		const name = Component.displayName || Component.name || 'Unknown';
+		componentWithScriptProp.displayName = `withScript(${name})`;
+	}
+	return componentWithScriptProp;
+}
+
+export default function Contact() {
 	return (
 		<>
+		<Main>
 			<div className="fancy-hero-four space-fix">
 				<div className="shapes shape-one"></div>
 				<div className="shapes shape-two"></div>
@@ -107,12 +137,11 @@ export default function Home() {
 					</div> 
 				</div>
 			</div> 
-			
+		</Main>
 		</>
 	)
 }
-
-Home.getLayout = function getLayout(page) {
+Contact.getLayout = function getLayout(page) {
   return (
     <Main>
       {page}
@@ -120,3 +149,4 @@ Home.getLayout = function getLayout(page) {
   )
 }
 
+export default withScript(Contact, "js", "jquery.min", "popper.min", "bootstrap.min", "custom", "jquery.appear", "jquery.countTo", "slick.min", "jquery.fancybox.min", "validator", "theme", )

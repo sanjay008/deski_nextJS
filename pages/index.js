@@ -17,29 +17,29 @@ const myLoader = ({ src }) => {
 }
 
 function withScript(Component, dir, ...srcs){
-    function componentWithScriptProp(props){
-			// eslint-disable-next-line react-hooks/rules-of-hooks
-			srcs.forEach(src => {
-				useEffect(() => {
-					
-					const script = document.createElement("script");
-					script.src = `/${dir}/${src}.js`;
-					console.log(script.src)
-					script.defer = true;
-					document.body.appendChild(script);
-					return () => { document.body.removeChild(script) };
-				});
+	function componentWithScriptProp(props){
+		// eslint-disable-next-line react-hooks/rules-of-hooks
+		srcs.forEach(src => {
+			useEffect(() => {
+				
+				const script = document.createElement("script");
+				script.src = `/${dir}/${src}.js`;
+				console.log(script.src)
+				script.defer = true;
+				document.body.appendChild(script);
+				return () => { document.body.removeChild(script) };
 			});
-			return <Component {...props} />
-		}
-		componentWithScriptProp.getInitialProps = Component.getInitialProps;
-		componentWithScriptProp.origGetInitialProps = Component.origGetInitialProps;
-		if (process.env.NODE_ENV !== 'production') {
-			const name = Component.displayName || Component.name || 'Unknown';
-			componentWithScriptProp.displayName = `withScript(${name})`;
-		}
-		return componentWithScriptProp;
+		});
+		return <Component {...props} />
 	}
+	componentWithScriptProp.getInitialProps = Component.getInitialProps;
+	componentWithScriptProp.origGetInitialProps = Component.origGetInitialProps;
+	if (process.env.NODE_ENV !== 'production') {
+		const name = Component.displayName || Component.name || 'Unknown';
+		componentWithScriptProp.displayName = `withScript(${name})`;
+	}
+	return componentWithScriptProp;
+}
 
 const Home = ({header_top_content, whatWeDo, founderNotes, features, Slider}) => {
 	return (
@@ -445,7 +445,7 @@ Home.getLayout = function getLayout(page) {
 		</Main>
 	)
 }
-export default withScript(Home, "js", "jquery.min", "popper.min", "bootstrap.min", "custom", "jquery.appear", "jquery.countTo", "slick.min", "jquery.fancybox.min", "theme")
+export default withScript(Home, "js", "jquery.min", "popper.min", "bootstrap.min", "custom", "jquery.appear", "jquery.countTo", "slick.min", "jquery.fancybox.min", "validator", "theme" )
 
 export async function getServerSideProps() {
 	const Slider = await fetch('http://organickuku.com/public/api/getSlider_API').then(res => res.json());
