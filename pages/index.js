@@ -12,10 +12,6 @@ import {useEffect} from 'react'
 import router from "next/router"
 import Link from 'next/link'
 
-
-
-
-
 const myLoader = ({ src }) => {
 	return `http://organickuku.com/${src}`
 }
@@ -456,7 +452,7 @@ export async function getServerSideProps() {
 	const header_top_content = await fetch('http://organickuku.com/public/api/getContent/home/1').then(res => res.json());
 	const whatWeDo = await fetch('http://organickuku.com/public/api/getContent/home/2').then(res => res.json());
 	const founderNotes = await fetch('http://organickuku.com/public/api/getContent/home/4').then(res => res.json());
-	const features = await fetch('http://organickuku.com/public/getContent/home/5').then(res => res.json());
+	const features = await fetch('http://organickuku.com/public/api/getContent/home/5').then(res => res.json());
 	
 	
 	return {
