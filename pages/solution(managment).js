@@ -110,9 +110,9 @@ SolutrionManagement.getLayout = function getLayout(page) {
 }
 
 export async function getStaticProps() {
-	const header_content = await fetch('http://organickuku.com/public/api/getContent/solution/1').then(res => res.json());
-	const ourTeam = await fetch('http://organickuku.com/public/api/getContent/solution/2').then(res => res.json());
-	const startUp = await fetch('http://organickuku.com/public/api/getContent/solution/3').then(res => res.json());
+	const header_content = await fetch('http://54.159.166.189/organickuku/deski-backend/public/index.php/api/getContent/solution/1').then(res => res.json());
+	const ourTeam = await fetch('http://54.159.166.189/organickuku/deski-backend/public/index.php/api/getContent/solution/2').then(res => res.json());
+	const startUp = await fetch('http://54.159.166.189/organickuku/deski-backend/public/index.php/api/getContent/solution/3').then(res => res.json());
 	
 	return {
 		props: {

@@ -247,9 +247,10 @@ Home.getLayout = function getLayout(page) {
 }
 
 export async function getStaticProps() {
-	const header_top_content = await fetch('http://organickuku.com/public/api/getContent/about/1').then(res => res.json());
-	const story_section = await fetch('http://organickuku.com/public/api/getContent/about/2').then(res => res.json());
-	const founder_section = await fetch('http://organickuku.com/public/api/getContent/about/3').then(res => res.json());
+	const header_top_content = await fetch('http://54.159.166.189/organickuku/deski-backend/public/index.php/api/getContent/about/1').then(res => res.json());
+	const story_section = await fetch('http://54.159.166.189/organickuku/deski-backend/public/index.php/api/getContent/about/2').then(res => res.json());
+	
+	const founder_section = await fetch('http://54.159.166.189/organickuku/deski-backend/public/index.php/api/getContent/about/3').then(res => res.json());
 	return {
 		props: {
 			header_top_content,

@@ -13,7 +13,7 @@ import router from "next/router"
 import Link from 'next/link'
 
 const myLoader = ({ src }) => {
-	return `http://127.0.0.1:8000/${src}`
+	return `http://54.159.166.189/organickuku/deski-backend/public/${src}`
 }
 
 
@@ -99,8 +99,8 @@ const  Blog = ({header_top_content, blogs}) => {
 export default withScript(Blog, "js", "jquery.min", "popper.min", "bootstrap.min", "custom", "aos", "jquery.appear", "jquery.countTo", "slick.min", "jquery.fancybox.min", "theme")
 
 export async function getServerSideProps() {
-	const header_top_content = await fetch('http://organickuku.com/public/api/getContent/blog/1').then(res => res.json());
-	const blogs = await fetch('http://organickuku.com/public/api/getAllBlogs').then(res => res.json());
+	const header_top_content = await fetch('http://54.159.166.189/organickuku/deski-backend/public/index.php/api/getContent/blog/1').then(res => res.json());
+	const blogs = await fetch('http://54.159.166.189/organickuku/deski-backend/public/index.php/api/getAllBlogs').then(res => res.json());
 	return {
 		props: {
 			header_top_content,

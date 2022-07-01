@@ -13,7 +13,7 @@ import router from "next/router"
 import Link from 'next/link'
 
 const myLoader = ({ src }) => {
-	return `http://organickuku.com/${src}`
+	return `http://54.159.166.189/organickuku/deski-backend/public/${src}`
 }
 
 function withScript(Component, dir, ...srcs){
@@ -448,11 +448,11 @@ Home.getLayout = function getLayout(page) {
 export default withScript(Home, "js", "jquery.min", "popper.min", "bootstrap.min", "custom", "jquery.appear", "jquery.countTo", "slick.min", "jquery.fancybox.min", "validator", "theme" )
 
 export async function getServerSideProps() {
-	const Slider = await fetch('http://organickuku.com/public/api/getSlider_API').then(res => res.json());
-	const header_top_content = await fetch('http://organickuku.com/public/api/getContent/home/1').then(res => res.json());
-	const whatWeDo = await fetch('http://organickuku.com/public/api/getContent/home/2').then(res => res.json());
-	const founderNotes = await fetch('http://organickuku.com/public/api/getContent/home/4').then(res => res.json());
-	const features = await fetch('http://organickuku.com/public/api/getContent/home/5').then(res => res.json());
+	const Slider = await fetch('http://54.159.166.189/organickuku/deski-backend/public/index.php/api/getSlider_API').then(res => res.json());
+	const header_top_content = await fetch('http://54.159.166.189/organickuku/deski-backend/public/index.php/api/getContent/home/1').then(res => res.json());
+	const whatWeDo = await fetch('http://54.159.166.189/organickuku/deski-backend/public/index.php/api/getContent/home/2').then(res => res.json());
+	const founderNotes = await fetch('http://54.159.166.189/organickuku/deski-backend/public/index.php/api/getContent/home/4').then(res => res.json());
+	const features = await fetch('http://54.159.166.189/organickuku/deski-backend/public/index.php/api/getContent/home/5').then(res => res.json());
 	
 	
 	return {

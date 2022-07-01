@@ -169,11 +169,11 @@ Services.getLayout = function getLayout(page) {
 }
 
 export async function getStaticProps() {
-	const header_content = await fetch('http://organickuku.com/public/api/getContent/services/1').then(res => res.json());
-	const offer = await fetch('http://organickuku.com/public/api/getContent/services/2').then(res => res.json());
-	const serviceSection = await fetch('http://organickuku.com/public/api/getContent/services/3').then(res => res.json());
-	const whyUs = await fetch('http://organickuku.com/public/api/getContent/services/4').then(res => res.json());
-	const services = await fetch('http://organickuku.com/public/api/getAllServices').then(res => res.json());
+	const header_content = await fetch('http://54.159.166.189/organickuku/deski-backend/public/index.php/api/getContent/services/1').then(res => res.json());
+	const offer = await fetch('http://54.159.166.189/organickuku/deski-backend/public/index.php/api/getContent/services/2').then(res => res.json());
+	const serviceSection = await fetch('http://54.159.166.189/organickuku/deski-backend/public/index.php/api/getContent/services/3').then(res => res.json());
+	const whyUs = await fetch('http://54.159.166.189/organickuku/deski-backend/public/index.php/api/getContent/services/4').then(res => res.json());
+	const services = await fetch('http://54.159.166.189/organickuku/deski-backend/public/index.php/api/getAllServices').then(res => res.json());
 	
 	return {
 		props: {
