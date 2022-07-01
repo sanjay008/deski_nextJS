@@ -12,9 +12,7 @@ import {useEffect} from 'react'
 import router from "next/router"
 import Link from 'next/link'
 
-const myLoader = ({ src }) => {
-	return `http://54.159.166.189/organickuku/deski-backend/public/${src}`
-}
+
 
 function withScript(Component, dir, ...srcs){
 	function componentWithScriptProp(props){
@@ -54,7 +52,7 @@ const Home = ({header_top_content, whatWeDo, founderNotes, features, Slider}) =>
 					<div className="row align-items-start justify-content-between">
 						<div className="col-lg-6 order-lg-last">
 							<div className="illustration-holder">
-								<Image src={ headerTop.side_img } loader={myLoader} alt="" className="illustration_01"  width="500px" height="700px" />
+								<Image src={ headerTop.side_img } alt="" className="illustration_01"  width="500px" height="700px" />
 								
 							</div>
 						</div>

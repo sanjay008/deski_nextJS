@@ -8,11 +8,7 @@ import Image from 'next/image'
 import Main from '../components/main'
 import styles from '../styles/Home.module.css'
 
-const myLoader = ({ src }) => {
-	return `http://organickuku.com/${src}`
-}
-
-export default function Services({ header_content, offer, serviceSection, services, whyUs }) {
+export default function Services({ header_content, offer, serviceSection, whyUs }) {
 	const router = useRouter();
 	const handleClick = (e, path) => {
 			router.push(path)
@@ -96,19 +92,7 @@ export default function Services({ header_content, offer, serviceSection, servic
 							<div className="sub-text mt-15">{serviceSection.subtitle}</div>
 						</div>
 
-						<div className="row justify-content-center">
-						{services.map((service, index) => {
-							return(
-								<div className="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="100" key={"service"+index}>
-									<div className="block-style-five"onClick={(e) => handleClick(e, '/service/'+service.id)} >
-										<div className="icon"><img src={service.img} alt="" /></div>
-										<h6 className="title"><span>{service.title}</span></h6>
-										<div dangerouslySetInnerHTML={{ __html: service.short_content}}></div>
-									</div> 
-								</div>
-							)
-						})}
-						</div>
+						
 					</div>
 				</div>
 			</div> 
@@ -173,14 +157,13 @@ export async function getStaticProps() {
 	const offer = await fetch('http://54.159.166.189/organickuku/deski-backend/public/index.php/api/getContent/services/2').then(res => res.json());
 	const serviceSection = await fetch('http://54.159.166.189/organickuku/deski-backend/public/index.php/api/getContent/services/3').then(res => res.json());
 	const whyUs = await fetch('http://54.159.166.189/organickuku/deski-backend/public/index.php/api/getContent/services/4').then(res => res.json());
-	const services = await fetch('http://54.159.166.189/organickuku/deski-backend/public/index.php/api/getAllServices').then(res => res.json());
+	
 	
 	return {
 		props: {
 			header_content,
 			offer,
 			serviceSection,
-			services,
 			whyUs
 		}
 	}
